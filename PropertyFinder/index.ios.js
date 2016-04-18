@@ -13,7 +13,7 @@
 
 //This loads the react-native module and assigns it to React.
 var React = require('react-native');
-
+var SearchPage = require('./SearchPage');
 
 //The React Native StyleSheet class used to style the application UI 
 //is similar to the CSS used on the Web
@@ -29,14 +29,6 @@ var styles = React.StyleSheet.create({
   }
 });
 
-class HelloWorld extends React.Component {
-  render() {
-    // return React.createElement(React.Text, {style: styles.text}, "Hello World!");
-    return <React.Text style = {styles.text}>Hello World (Again)</React.Text>;
-
-  }
-}
-
 class PropertyFinderApp extends React.Component {
   render() {
     return (
@@ -44,7 +36,7 @@ class PropertyFinderApp extends React.Component {
         style = {styles.container}
         initialRoute = {{
           title: 'Property Finder',
-          component: HelloWorld 
+          component: SearchPage
         }}/>
     );
   }
