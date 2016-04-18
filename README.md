@@ -1,4 +1,4 @@
-Grade Tracker
+React Native App
 =====================
 
 Getting Start
