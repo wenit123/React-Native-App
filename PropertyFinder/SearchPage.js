@@ -21,32 +21,82 @@ var {
 } = React;
 
 var styles = StyleSheet.create({
+  	
+  	container: {
+    	padding: 30,
+    	marginTop: 65,
+    	alignItems: 'center'
+  	},
   	description: {
     	marginBottom: 20,
     	fontSize: 18,
     	textAlign: 'center',
     	color: '#656565'
   	},
-	container: {
-		padding: 30,
-		marginTop: 65,
-		alignItems: 'center'
+	flowRight: {
+		flexDirection: 'row',
+	  	alignItems: 'center',
+  		alignSelf: 'stretch'
+	},
+	searchInput: {
+		fontSize: 18,
+		height: 36,
+		padding: 4,
+		marginRight: 5,
+		flex: 4,
+		borderWidth: 1,
+		borderRadius: 8,		
+		borderColor: '#48BBEC',
+	},
+	button: {
+		height: 36,
+		backgroundColor: '#48BBEC',
+		borderColor: '#48BBEC',
+  		borderWidth: 1,
+  		borderRadius: 8,
+  		marginBottom: 10,
+  		alignSelf: 'stretch',
+  		justifyContent: 'center',
+  		flex: 1,
+		flexDirection: 'row',
+
+	},
+	buttonText: { 
+		fontSize: 18,
+  		color: 'white',
+ 	 	alignSelf: 'center' 		
 	}
+
+
 });
 
-
-
+// NOTE: TouchableHighlight supports only one child
+// If you wish to have several child components, wrap them in a View.
 
 class SearchPage extends Component {
+
 	render(){
 		return(
 			<View style={styles.container}>
 				<Text style={styles.description}>
 				Search for your house!!
 				</Text>
-				<Text style={styles.description}>
-				Search by different way!
+				<Text style={styles.container}>
+				Search Now!!!!
 				</Text>
+				<View style={styles.flowRight}>
+  				<TextInput style={styles.searchInput} placeholder='Search via name or postcode'/>
+  					<TouchableHighlight style={styles.button} underlayColor='#99d9f4'>
+    				<Text style={styles.buttonText}>Go</Text>
+  					</TouchableHighlight>
+				</View>
+
+				<TouchableHighlight style={styles.button} underlayColor='#99d9f4'>
+  				<Text style={styles.buttonText}>Location</Text>
+				</TouchableHighlight>
+
+				<Image source={require('./house.png')} />
+				// can add styles img for the size
 			</View>
 		);
 	}
