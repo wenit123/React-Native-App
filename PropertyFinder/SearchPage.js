@@ -75,10 +75,12 @@ var styles = StyleSheet.create({
 
 class SearchPage extends Component {
 
+	// isLoading property will keep track of whether a query is in progress
 	constructor(props) {
 		super(props);
 		this.state = {
-			searchString: 'Las Vegas'
+			searchString: 'Las Vegas',
+			// isLoading = false
 		};
 	}
 
@@ -91,6 +93,11 @@ class SearchPage extends Component {
 	}
 
 	render(){
+
+		// var check = this.state.isLoading ?
+		// ( <ActivityIndicatorIOS size='large' /> ):
+		// ( <View/> );
+
 		console.log('SearchPage.render');
 		return(
 			<View style={styles.container}>
